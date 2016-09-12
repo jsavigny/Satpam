@@ -61,12 +61,12 @@ for row in tqdm(spam_list):
 # Menyimpan list data yang telah di pra-proses ke file teks
 print("Menyimpan list data yang telah di pra-proses ke file teks")
 
-output = open(preprocessed_data_not_spam_txt, "w+")
+output = open(preprocessed_data_not_spam_txt, "w")
 for sms in tqdm(preprocessed_data_not_spam):
     output.write(sms+"\n")
 output.close()
 
-output = open(preprocessed_data_spam_txt, "w+")
+output = open(preprocessed_data_spam_txt, "w")
 for sms in tqdm(preprocessed_data_spam):
     output.write(sms+"\n")
 output.close()
@@ -74,12 +74,12 @@ output.close()
 # Menyimpan list data yang telah di pra-proses ke file csv
 print("Menyimpan list data yang telah di pra-proses ke file csv")
 
-with open(preprocessed_data_not_spam_csv, 'w+', newline = '') as f:
+with open(preprocessed_data_not_spam_csv, 'w', newline = '') as f:
     writer = csv.writer(f)
     for sms in tqdm(preprocessed_data_not_spam):
         writer.writerow([sms])
 
-with open(preprocessed_data_spam_csv, 'w+', newline = '') as f:
+with open(preprocessed_data_spam_csv, 'w', newline = '') as f:
     writer = csv.writer(f)
     for sms in tqdm(preprocessed_data_spam):
         writer.writerow([sms])
